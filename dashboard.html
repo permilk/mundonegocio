@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .metrics {
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples filas */
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .metric {
+            flex: 1 1 calc(33.333% - 20px); /* Ajusta al 33% menos márgenes */
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+            padding: 15px;
+            background: #f9f9f9;
+        }
+        .metric h2 {
+            margin: 10px 0;
+            color: #003366;
+            font-size: 2em;
+        }
+        .metric p {
+            color: #555;
+            font-size: 1.1em;
+        }
+        .progress-bar-container {
+            padding: 20px;
+        }
+        .progress-bar {
+            height: 30px;
+            background: #f2f2f2;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress {
+            height: 100%;
+            width: 75%; /* Cambia el porcentaje según sea necesario */
+            background: #FF6600;
+            border-radius: 15px;
+            text-align: right;
+            color: white;
+            padding-right: 10px;
+            line-height: 30px;
+            font-size: 14px;
+        }
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 768px) {
+            .metric {
+                flex: 1 1 calc(50% - 20px); /* Cambia a 50% en pantallas medianas */
+            }
+            .header {
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .metric {
+                flex: 1 1 100%; /* Una sola columna en pantallas pequeñas */
+            }
+            .header {
+                font-size: 18px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="header">Métricas Clave - Mundo Negocio</div>
+        <div class="metrics">
+            <div class="metric">
+                <h2>1,245</h2>
+                <p>Usuarios Activos</p>
+            </div>
+            <div class="metric">
+                <h2>$50,000</h2>
+                <p>Ingresos del Mes</p>
+            </div>
+            <div class="metric">
+                <h2>85%</h2>
+                <p>Satisfacción del Cliente</p>
+            </div>
+        </div>
+        <div class="progress-bar-container">
+            <p>Progreso de Objetivo Mensual:</p>
+            <div class="progress-bar">
+                <div class="progress">75%</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
